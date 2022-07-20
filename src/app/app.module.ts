@@ -12,8 +12,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
-import { TestComponent } from './pages/test/test.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { PostComponent } from './pages/post/post.component';
+import { CommentComponent } from './pages/comment/comment.component';
 
 
 @NgModule({
@@ -30,8 +31,9 @@ import { BlogComponent } from './pages/blog/blog.component';
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    TestComponent,
-    BlogComponent
+    BlogComponent,
+    PostComponent,
+    CommentComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
