@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { BlogComponent } from './pages/blog/blog.component';
 import { FeedBackComponent } from './pages/feedbackandreclamation/feed-back/feed-back.component';
+import { RendezVousFeedbackComponent } from './pages/feedbackandreclamation/rendez-vous-feedback/rendez-vous-feedback.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FeedBackComponent } from './pages/feedbackandreclamation/feed-back/feed
     AdminLayoutComponent,
     AuthLayoutComponent,
     BlogComponent,
-    FeedBackComponent
+    FeedBackComponent,
+    RendezVousFeedbackComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
