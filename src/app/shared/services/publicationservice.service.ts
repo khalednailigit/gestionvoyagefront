@@ -31,7 +31,7 @@ export class PublicationService {
       }));
   }
   getPub(): Observable<Publication[]> {
-    return this.http.get<Publication[]>(environment.api_base_url + `/products`)
+    return this.http.get<Publication[]>(environment.api_base_url + `/listePub`)
       .pipe(map(res => {
         return res;
       }));
