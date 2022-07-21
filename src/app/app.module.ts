@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { BlogComponent } from './pages/blog/blog.component';
+import { FeedBackComponent } from './pages/feedbackandreclamation/feed-back/feed-back.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { BlogComponent } from './pages/blog/blog.component';
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    BlogComponent
+    BlogComponent,
+    FeedBackComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
