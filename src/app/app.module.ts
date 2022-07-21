@@ -15,6 +15,7 @@ import { ComponentsModule } from './components/components.module';
 import { BlogComponent } from './pages/blog/blog.component';
 import { FeedBackComponent } from './pages/feedbackandreclamation/feed-back/feed-back.component';
 import { RendezVousFeedbackComponent } from './pages/feedbackandreclamation/rendez-vous-feedback/rendez-vous-feedback.component';
+import { ReclamationComponent } from './pages/feedbackandreclamation/reclamation/reclamation.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { RendezVousFeedbackComponent } from './pages/feedbackandreclamation/rend
     AuthLayoutComponent,
     BlogComponent,
     FeedBackComponent,
-    RendezVousFeedbackComponent
+    RendezVousFeedbackComponent,
+    ReclamationComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
