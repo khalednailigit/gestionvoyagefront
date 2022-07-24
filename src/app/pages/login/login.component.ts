@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { $ } from 'protractor';
 import { AuthService } from 'src/app/shared/services/user/auth.service';
 import { StorageService } from 'src/app/shared/services/user/storage.service';
  
@@ -21,7 +22,6 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private storageService: StorageService,private router: Router) { }
   ngOnInit(): void {
     
-     alert(this.storageService.isLoggedIn());
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
       this.roles = this.storageService.getUser().roles;
