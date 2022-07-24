@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PublicationService} from '../../shared/services/publicationservice.service';
+import {Publication} from '../../models/publication';
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
-
+  pubs: Publication[];
+  constructor(private service: PublicationService) { }
   ngOnInit(): void {
+    this.getPubs();
   }
 
+  getPubs() {
+    this.service.getPub()
+      .subscribe(
+        data => {
+          if (data && data.length > 0) {
+            this.pubs = data;
+          }},
+          error => {
+            console.log('error', error);
+          });
+        }
 }
