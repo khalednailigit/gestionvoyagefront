@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RendezvousF } from 'src/app/models/rendezvousfeedback';
+import { FeedbackService } from 'src/app/shared/services/feedbackrendezvous.service';
 
 @Component({
   selector: 'app-feed-back',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedBackComponent implements OnInit {
 
-  constructor() { }
+  listRv : RendezvousF[];
+
+
+
+  constructor(private  service : FeedbackService ) { }
 
   ngOnInit(): void {
+
+    this.service.getAllRdv().subscribe(res=>
+      {console.log(res);
+
+      this.listRv=res
+    });
+
   }
 
 }
