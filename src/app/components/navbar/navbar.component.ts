@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/user/auth.service';
+import { StorageService } from 'src/app/shared/services/user/storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +14,25 @@ export class NavbarComponent implements OnInit {
   public focus;
   public listTitles: any[];
   public location: Location;
-  constructor(location: Location,  private element: ElementRef, private router: Router) {
-    this.location = location;
+  constructor(location: Location,  private authService: AuthService, private storageService: StorageService,private router: Router) 
+  { this.location = location; }
+  
+  logout(): void {
+    alert("i m working")
+    this.authService.logout().subscribe({
+      next: res => {
+        console.log(res);
+        this.storageService.clean();
+        
+      },
+      error: err => {
+       
+        this.storageService.clean();
+        alert("logouterr");
+      }
+    });
+    this.router.navigate(['/login']);
+ //   window.location.reload();
   }
 
   ngOnInit() {
