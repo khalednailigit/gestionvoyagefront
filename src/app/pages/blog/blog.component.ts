@@ -19,6 +19,7 @@ export class BlogComponent implements OnInit {
     this.service.getPub()
       .subscribe(
         data => {
+          console.log(data);
           if (data && data.length > 0) {
             this.pubs = data;
           }},
