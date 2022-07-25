@@ -22,6 +22,8 @@ import { FeedBackContentComponent } from './pages/feedbackandreclamation/feed-ba
 import { AddFeedBackComponent } from './pages/feedbackandreclamation/add-feed-back/add-feed-back.component';
 import { StatisticComponent } from './pages/feedbackandreclamation/statistic/statistic.component';
 
+import { SendinvitationComponent } from './pages/invitation/sendinvitation/sendinvitation.component';
+import { InvitationComponent } from './models/invitation/invitation.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { StatisticComponent } from './pages/feedbackandreclamation/statistic/sta
     LoginComponent,
     FeedBackContentComponent,
     AddFeedBackComponent,
-    StatisticComponent
+    StatisticComponent,
+    SendinvitationComponent,
+    InvitationComponent
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
