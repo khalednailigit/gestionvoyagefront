@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FeedBack } from 'src/app/models/feedback';
 import { FeedbackService } from 'src/app/shared/services/feedbackrendezvous.service';
 
 @Component({
@@ -15,14 +16,17 @@ export class RendezVousFeedbackComponent implements OnInit {
   rating : number;
   @Input() id : number;
 
+  listFeedback : FeedBack[]  ;
 
   constructor(private  service : FeedbackService ) {
-    
+    this.listFeedback =new Array() ;
     
    }
 
   ngOnInit(): void {
     this.getRating(this.id);
+    this.getListFeedback(this.id);
+
   }
 
   getRating(idRv){
@@ -30,8 +34,24 @@ export class RendezVousFeedbackComponent implements OnInit {
       {
       console.log(res);
       this.rating=res;
-    });
+    }); }
 
+    getListFeedback(idRv){
+      this.service.getListFeedback(idRv).subscribe(res=>
+        {
+
+          res.forEach(element => {
+            this.service.getFeedback(element).subscribe(elem=>
+              {
+              console.log(elem);
+              this.listFeedback.push(elem);
+            });
+          });
+        console.log(this.listFeedback);
+      });
+    }
+
+   
     
-  }
+ 
 }

@@ -18,6 +18,10 @@ import { RendezVousFeedbackComponent } from './pages/feedbackandreclamation/rend
 import { ReclamationComponent } from './pages/feedbackandreclamation/reclamation/reclamation.component';
 import { LoginComponent } from './pages/login/login.component';
 import { httpInterceptorProviders } from './shared/_helper/http-request.interceptor';
+import { FeedBackContentComponent } from './pages/feedbackandreclamation/feed-back-content/feed-back-content.component';
+import { AddFeedBackComponent } from './pages/feedbackandreclamation/add-feed-back/add-feed-back.component';
+import { StatisticComponent } from './pages/feedbackandreclamation/statistic/statistic.component';
+
 
 
 @NgModule({
@@ -38,7 +42,10 @@ import { httpInterceptorProviders } from './shared/_helper/http-request.intercep
     FeedBackComponent,
     RendezVousFeedbackComponent,
     ReclamationComponent,
-    LoginComponent
+    LoginComponent,
+    FeedBackContentComponent,
+    AddFeedBackComponent,
+    StatisticComponent
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
