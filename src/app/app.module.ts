@@ -17,6 +17,8 @@ import { FeedBackComponent } from './pages/feedbackandreclamation/feed-back/feed
 import { RendezVousFeedbackComponent } from './pages/feedbackandreclamation/rendez-vous-feedback/rendez-vous-feedback.component';
 import { ReclamationComponent } from './pages/feedbackandreclamation/reclamation/reclamation.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SendinvitationComponent } from './pages/invitation/sendinvitation/sendinvitation.component';
+import { InvitationComponent } from './models/invitation/invitation.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { LoginComponent } from './pages/login/login.component';
     FeedBackComponent,
     RendezVousFeedbackComponent,
     ReclamationComponent,
-    LoginComponent
+    LoginComponent,
+    SendinvitationComponent,
+    InvitationComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { AuthGuard } from './shared/services/guards/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
+import { SendinvitationComponent } from './pages/invitation/sendinvitation/sendinvitation.component';
 
 const routes: Routes =[
   {
@@ -34,6 +35,7 @@ const routes: Routes =[
     ]
   },
   { path: 'login', component: LoginComponent },
+  { path: 'invitation',component: SendinvitationComponent },
   {
     path: '**',
     redirectTo: 'dashboard',
