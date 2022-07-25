@@ -16,9 +16,13 @@
     <div class="row">
 
 
-<app-rendez-vous-feedback   *ngFor="let r of listRv "   ></app-rendez-vous-feedback>
-      
-
+<app-rendez-vous-feedback   *ngFor="let r of listRv "   
+        [sender]="r.invitation.sent.username"
+        [receiver]="r.invitation.recpt.username"
+        [contry]="r.rendezvousLieu.country"
+        [date]="r.date"
+        [id]="r.id"
+       ></app-rendez-vous-feedback>
     </div>
   </div>
   

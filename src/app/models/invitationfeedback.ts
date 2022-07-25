@@ -2,8 +2,8 @@ import { EmployeeF } from "./employeefeedback";
 
 export class InvitationF {
     id: number ;
-    sender: EmployeeF;
-    receiver: EmployeeF;
+    sent: EmployeeF;
+    recpt: EmployeeF;
     statut: boolean;
     dateTimeOfInvitation: string;
     disabled: boolean;

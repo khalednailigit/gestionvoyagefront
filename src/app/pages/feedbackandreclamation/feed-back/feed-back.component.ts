@@ -10,19 +10,36 @@ import { FeedbackService } from 'src/app/shared/services/feedbackrendezvous.serv
 export class FeedBackComponent implements OnInit {
 
   listRv : RendezvousF[];
-
+  i : number ;
 
 
   constructor(private  service : FeedbackService ) { }
 
   ngOnInit(): void {
 
+  
     this.service.getAllRdv().subscribe(res=>
-      {console.log(res);
+      {console.log(res.find(element => element != undefined).invitation.recpt);
 
-      this.listRv=res
+      this.listRv=res;
     });
 
   }
+
+
+  
+
+  getRating(idRv){
+    this.service.getRatingRv(idRv).subscribe(res=>
+      {
+
+      this.i=res;
+    });
+    console.log(this.i);
+    return this.i ;
+
+    
+  }
+
 
 }

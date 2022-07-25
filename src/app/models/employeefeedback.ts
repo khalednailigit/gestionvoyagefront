@@ -4,8 +4,8 @@ import { RoleF } from "./rolefeedback";
 
 export class EmployeeF {
     id: number ;
-    username: EmployeeF;
-    email: EmployeeF;
+    username: string;
+    email: string;
     password: string;
     roles:RoleF[];
     fullName: string;
