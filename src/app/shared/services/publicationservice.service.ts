@@ -35,7 +35,7 @@ export class PublicationService {
     return this.http.get<Publication[]>(environment.api_base_url + `/pub/listePub`);
 
   }
-  getProductById(id: number): Observable<Publication> {
+  getPublicationById(id: number): Observable<Publication> {
     return this.http.get<Publication>(environment.api_base_url + `/pub/` + id)
       .pipe(map(res => {
         return res;
