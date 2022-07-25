@@ -11,5 +11,10 @@ export class SendinvitationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // navigate to the dashboard page
+  navigateToDashboard() {
+    window.location.href = '/dashboard';
+  }
+  
 
 }
