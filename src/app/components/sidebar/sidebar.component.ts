@@ -35,20 +35,5 @@ export class SidebarComponent implements OnInit {
    });
   }
   
-  logout(): void {
-    alert("i m working")
-    this.authService.logout().subscribe({
-      next: res => {
-        console.log(res);
-        this.storageService.clean();
-        alert("logout");
-      },
-      error: err => {
-        console.log(err);
-        alert("logouterr");
-      }
-    });
-    window.location.href = '/login';
- //   window.location.reload();
-  }
+  
 }

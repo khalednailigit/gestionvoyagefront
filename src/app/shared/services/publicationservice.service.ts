@@ -32,11 +32,7 @@ export class PublicationService {
       }));
   }
   getPub(): Observable<Publication[]> {
-    return this.http.get<Publication[]>(environment.api_base_url + `/pub/listePub`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbm4iLCJpYXQiOjE2NTg3MDI2MzYsImV4cCI6MTY1ODc4OTAzNn0._XhWD7D9mithTgOnmyyaqaWqhb9DrCJGNZulqXcqdpN4Qd2gblUzsVy0bDA1rLe7DyXh6o-xkeirXJZCL4t_rw`
-      }});
+    return this.http.get<Publication[]>(environment.api_base_url + `/pub/listePub`);
 
   }
   getProductById(id: number): Observable<Publication> {

@@ -18,19 +18,10 @@ export class NavbarComponent implements OnInit {
   { this.location = location; }
   
   logout(): void {
-    alert("i m working")
-    this.authService.logout().subscribe({
-      next: res => {
-        console.log(res);
+   
+        console.log("logout");
         this.storageService.clean();
-        
-      },
-      error: err => {
-       
-        this.storageService.clean();
-        alert("logouterr");
-      }
-    });
+      
     this.router.navigate(['/login']);
  //   window.location.reload();
   }

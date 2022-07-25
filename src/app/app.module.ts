@@ -17,6 +17,7 @@ import { FeedBackComponent } from './pages/feedbackandreclamation/feed-back/feed
 import { RendezVousFeedbackComponent } from './pages/feedbackandreclamation/rendez-vous-feedback/rendez-vous-feedback.component';
 import { ReclamationComponent } from './pages/feedbackandreclamation/reclamation/reclamation.component';
 import { LoginComponent } from './pages/login/login.component';
+import { httpInterceptorProviders } from './shared/_helper/http-request.interceptor';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { LoginComponent } from './pages/login/login.component';
     ReclamationComponent,
     LoginComponent
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
