@@ -21,6 +21,8 @@ import { httpInterceptorProviders } from './shared/_helper/http-request.intercep
 import { FeedBackContentComponent } from './pages/feedbackandreclamation/feed-back-content/feed-back-content.component';
 import { AddFeedBackComponent } from './pages/feedbackandreclamation/add-feed-back/add-feed-back.component';
 import { StatisticComponent } from './pages/feedbackandreclamation/statistic/statistic.component';
+import { RegisterComponent } from './pages/register/register.component';
+ 
 
 
 
@@ -45,7 +47,8 @@ import { StatisticComponent } from './pages/feedbackandreclamation/statistic/sta
     LoginComponent,
     FeedBackContentComponent,
     AddFeedBackComponent,
-    StatisticComponent
+    StatisticComponent,
+    RegisterComponent
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
