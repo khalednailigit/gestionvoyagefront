@@ -4,7 +4,11 @@
       <div class="col-xl-4">
         <div class="card">
           <div class="card-header">
-
+            <div *ngFor="let app for pubs" >
+              <p>Title: <span class="item">{{app.title}}</span> </p>
+              <p>Content: <span class="item">{{app.content}}</span></p>
+              <p>Date: <span class="item">{{app.dateTimeOfPub}}}</span></p>
+            </div>
           </div>
         </div>
       </div>
