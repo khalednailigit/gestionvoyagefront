@@ -1,4 +1,5 @@
 import { Rating } from "./rating";
+import { RendezvousF } from "./rendezvousfeedback";
 
 export class FeedBack {
     id: number ;
@@ -7,5 +8,7 @@ export class FeedBack {
     date: string;
     idUser: number;
     rating: Rating;
+    rendezvous:RendezvousF;
+    
   }
   

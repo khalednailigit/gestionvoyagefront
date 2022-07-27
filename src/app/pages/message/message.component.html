@@ -1,0 +1,41 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+            <!-- Card stats -->
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--7">
+
+    <div class="main-container">
+        <div class="header-container">
+            <mat-grid-list cols="3" rowHeight="100px">
+                <mat-grid-tile>
+                    <div style="position: absolute; left: 0px;">
+                        <img src="" height="80px">
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div *ngIf="receiver !== null && receiver !== undefined && receiver !== ''" class="receiver-header">Talk to {{receiver}}</div>
+                </mat-grid-tile>
+                <mat-grid-tile class="user-header">
+                    <button mat-raised-button>Welcome, {{username}}</button>
+                    <button mat-raised-button (click)="logout()">Logout</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+
+        <mat-grid-list class="chat-table" cols="8" rowHeight="550" gutterSize="20">
+            <mat-grid-tile class="user-list-col wt-justify cell-border" [colspan]="2" [style.vertical-align]="'top'">
+                <app-users-list [username]="username" class="user-container" (receiverUpdated)="onReceiverChange($event)">
+                </app-users-list>
+            </mat-grid-tile>
+            <mat-grid-tile class="wt-justify cell-border" [colspan]="6">
+                <!-- <wt-messages [username]="username" class="message-wrapper"></wt-messages>-->
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

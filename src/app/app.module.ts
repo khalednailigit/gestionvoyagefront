@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
+import { MessageComponent } from './pages/message/message.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { FeedBackComponent } from './pages/feedbackandreclamation/feed-back/feed-back.component';
 import { RendezVousFeedbackComponent } from './pages/feedbackandreclamation/rendez-vous-feedback/rendez-vous-feedback.component';
@@ -23,9 +24,18 @@ import { AddFeedBackComponent } from './pages/feedbackandreclamation/add-feed-ba
 import { StatisticComponent } from './pages/feedbackandreclamation/statistic/statistic.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ListInvitationComponent } from './pages/invitation/list-invitation/list-invitation.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
  
 
 
+import { InjectableRxStompConfig, RxStompService, rxStompServiceFactory } from '@stomp/ng2-stompjs';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+
+import { UsersListComponent } from './pages/users-list/users-list.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   imports: [
@@ -35,12 +45,21 @@ import { ListInvitationComponent } from './pages/invitation/list-invitation/list
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatGridListModule,
+    MatListModule,
+    //NgSelectModule,
+    MatSelectModule
+
+    
+
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
+    MessageComponent,
+    UsersListComponent,
     BlogComponent,
     FeedBackComponent,
     RendezVousFeedbackComponent,
@@ -50,7 +69,8 @@ import { ListInvitationComponent } from './pages/invitation/list-invitation/list
     AddFeedBackComponent,
     StatisticComponent,
     RegisterComponent,
-    ListInvitationComponent
+    ListInvitationComponent,
+    UserProfileComponent
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
