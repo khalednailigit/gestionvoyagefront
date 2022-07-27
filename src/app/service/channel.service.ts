@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Md5 } from 'ts-md5/dist/md5';
 import { Subject, Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ChannelService {
 
   private channel = new Subject<string>();
@@ -24,7 +26,7 @@ export class ChannelService {
   }
 
   removeChannel() {
-    //this.channel.next();
+   // this.channel.next();
   }
 
   getChannel(): Observable<any> {

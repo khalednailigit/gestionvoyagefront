@@ -76,10 +76,12 @@ id: any;
    /* */
 
    this.serviceTravel._getById('user',this.id).subscribe((user : any)=> {
-    user.travel = this.toppings.value[0];
+    user.travel = this.toppings.value;
     console.log("==================== ", user);
-    this.serviceTravel._put('user/editEmployee', user, this.id).subscribe((data) => {
+    this.serviceTravel._put('user/travel', user, this.id).subscribe((data) => {
       console.log("============== true");
+      this.modalService.dismissAll();
+      this.getAllUsers();
     });
   });
 }

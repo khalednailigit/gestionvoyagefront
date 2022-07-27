@@ -8,14 +8,13 @@ import { ListInvitationComponent } from 'src/app/pages/invitation/list-invitatio
 import { AuthGuard } from 'src/app/shared/services/guards/auth.guard';
 
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
+import { HomeChatComponent } from 'src/app/pages/home-chat/home-chat.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
-    { path: 'message',      component: MessageComponent },
-    { path: 'travel', loadChildren: () => import('src/app/pages/travels/travels.module').then(m => m.TravelsModule)
-},
-
-    { path: 'dashboard',      component: DashboardComponent,canActivate: [AuthGuard]  },
+    { path: 'message',      component: HomeChatComponent },
+    { path: 'travel', loadChildren: () => import('src/app/pages/travels/travels.module').then(m => m.TravelsModule)},
+    { path: 'dashboard',      component: DashboardComponent  },
     { path: 'blog',      component: BlogComponent ,canActivate: [AuthGuard]  },
     { path: 'feedback',      component: FeedBackComponent ,canActivate: [AuthGuard] },
     { path: 'listeinvitation',      component: ListInvitationComponent ,canActivate: [AuthGuard] },

@@ -36,6 +36,14 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { UsersListComponent } from './pages/users-list/users-list.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { HomeChatComponent } from './pages/home-chat/home-chat.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MessageService } from './service/message.service';
+import { ChannelService } from './service/channel.service';
+import { myRxStompConfig } from './service/my-rx-stomp.config';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -49,7 +57,13 @@ import { NgSelectModule } from '@ng-select/ng-select';
     MatGridListModule,
     MatListModule,
     //NgSelectModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule,
+    MatInputModule,
+    MatIconModule,
+    MatGridListModule,
+    MatButtonModule,
+        
 
     
 
@@ -70,9 +84,22 @@ import { NgSelectModule } from '@ng-select/ng-select';
     StatisticComponent,
     RegisterComponent,
     ListInvitationComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    HomeChatComponent,
+    
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders,    ChannelService,MessageService,
+    {
+      provide: InjectableRxStompConfig,
+      useValue: myRxStompConfig
+    },
+    {
+      provide: RxStompService,
+      useFactory: rxStompServiceFactory,
+      deps: [InjectableRxStompConfig]
+    },
+   
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

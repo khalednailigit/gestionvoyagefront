@@ -9,7 +9,7 @@ declare interface RouteInfo {
     icon: string;
     class: string;
 }
-export const ROUTES: RouteInfo[] = [
+export const ROUTES: RouteInfo[] = [ 
     { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
     { path: '/message', title: 'Message',  icon: 'ni ni-email-83 text-red', class: '' },
     { path: '/travel', title: 'Assigner un voyage',  icon: 'ni ni-planet text-blue', class: '' },

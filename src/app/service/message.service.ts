@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-import { Message } from '../model/message';
+import { Message } from '../shared/model/message';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
+  
 export class MessageService {
 
     private messages: Array<Message> = [];
@@ -28,7 +31,7 @@ export class MessageService {
     }
 
     sendReadReceipt(channelId: string, username: string) {
-        this.http.post('http://localhost:8080' + '/messages/', {
+        this.http.post('http://localhost:8084' + '/messages/', {
             channel: channelId,
             username: username
         });

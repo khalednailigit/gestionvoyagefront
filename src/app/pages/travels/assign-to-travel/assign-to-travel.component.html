@@ -24,6 +24,7 @@
                             <tr>
                                 <th scope="col">Nom</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Voyage Affecté</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -34,6 +35,10 @@
                                 </td>
                                 <td>
                                     {{user.email}}
+                                </td>
+                                <td>
+                                    {{user?.travel?.address}}
+
                                 </td>
 
                                 <td>
@@ -67,8 +72,8 @@
                     <!-- <ng-select [items]="cars" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Séléctioner une destination" formControlName="selected">
                     </ng-select>-->
                     <mat-form-field>
-                        <mat-select placeholder="Les Destination" [formControl]="toppings" [(value)]="selectedToppings" multiple>
-                            <mat-option *ngFor="let travel of travels" [value]="travel.id">{{travel.address}}</mat-option>
+                        <mat-select placeholder="Les Destination" [formControl]="toppings" [(value)]="selectedToppings" [multiple]="false">
+                            <mat-option *ngFor="let travel of travels" [value]="travel">{{travel.address}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>

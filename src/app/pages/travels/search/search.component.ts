@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
+import * as moment from 'moment';
 import { TravelService } from 'src/app/service/travel.service';
 
 @Component({
@@ -38,15 +39,15 @@ export class SearchComponent implements OnInit {
 
   selectDateofTravel(model){  
     console.log(model);
-    let date = model.year + "-"+ model.month + "-" + model.day;
+    let date = moment(new Date(model.year , model.month-1 , model.day)).format('YYYY-MM-DD')
     this.travelService._findbyDateofTravelLessThanEqual("travel/searchDateTravel",date).subscribe(data=> this.travels = data)
   }
 
   selectStartEndDateofTravel(){
     console.log("====== start ",this.startDate);
     console.log("====== end ",this.endDate);
-    let startDate = this.startDate.year + "-"+ this.startDate.month + "-" + this.startDate.day;
-    let endDate = this.endDate.year + "-"+ this.endDate.month + "-" + this.endDate.day;
+    let startDate =  moment(new Date(this.startDate.year , this.startDate.month - 1 , this.startDate.day)).format('YYYY-MM-DD')
+    let endDate =  moment(new Date(this.endDate.year , this.endDate.month -1 , this.endDate.day)).format('YYYY-MM-DD');
     this.travelService._findByDateTravelDateBetween("travel/searchDateTravelBeetween",startDate, endDate).subscribe(data=>  this.travels = data)
 
  
