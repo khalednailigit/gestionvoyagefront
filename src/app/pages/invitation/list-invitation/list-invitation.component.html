@@ -1,0 +1,17 @@
+<!-- list of invitation -->
+<html lang="en">
+    <table class="table align-items-center table-flush w-auto" >
+
+        <tr  *ngFor="let res of listInvitation"> 
+            <td >{{res.id}}</td>
+            <td>{{res.name}}</td>
+            <td>{{res.email}}</td>
+            <td>{{res.phone}}</td>
+            <td>{{res.message}}</td>
+            <td>{{res.created_at}}</td>
+            <td>{{res.updated_at}}</td>
+            <td>{{res.deleted_at}}</td>
+        </tr>
+
+      </table>
+</html>

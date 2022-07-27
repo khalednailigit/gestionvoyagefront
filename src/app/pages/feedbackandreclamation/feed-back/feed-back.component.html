@@ -1,0 +1,57 @@
+
+
+
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">    <!-- Mask -->
+    <!-- Header container -->
+    <div class="container">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class=" col-xl-12 order-xl-1 " >
+    <ul class="navbar-nav mr-auto">
+     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="['/feedback']">Link</a>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link " routerLink="/add">Disabled</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+
+
+</div>   
+  </div>
+  <div class="container-fluid mt--7">
+    <div class="row">
+
+      
+
+ 
+
+
+   
+
+
+
+<app-rendez-vous-feedback   *ngFor="let r of listRv "   
+        [sender]="r.invitation.sent"
+        [receiver]="r.invitation.recpt"
+        [contry]="r.rendezvousLieu.country"
+        [date]="r.date"
+        [id]="r.id"
+       ></app-rendez-vous-feedback>
+
+
+
+    </div>
+
+
+
+
+  </div>
+  

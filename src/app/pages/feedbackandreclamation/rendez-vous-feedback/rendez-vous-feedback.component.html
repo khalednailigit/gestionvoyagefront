@@ -1,0 +1,53 @@
+<div class="col-xl-12 order-xl-1  card card-profile shadow ">
+   
+      
+       
+
+        <div class="rating"> 
+          <input type="radio"  [value]="val5"  [checked]="rating == val5" ><label for="5">☆</label> 
+          <input type="radio"  [value]="val4"  [checked]="rating == val4" ><label for="4">☆</label> 
+          <input type="radio"  [value]="val3" [checked]="rating == val3"  ><label for="3">☆</label> 
+          <input type="radio"  [value]="val2" [checked]="rating == val2"  ><label for="2">☆</label> 
+          <input type="radio"  [value]="val1"  [checked]="rating == val1" ><label for="1">☆</label>
+        </div>
+
+
+
+
+
+        <div class="text-center">
+          <h3>
+            {{ sender.username }}<span class="font-weight-light"></span>
+          </h3>
+          <h3>
+            {{ receiver.username }}<span class="font-weight-light"></span>
+          </h3>
+         
+          <div class="h5 mt-4">
+            <i class="ni business_briefcase-24 mr-2"></i>{{ date }}
+          </div>
+          <div>
+            <i class="ni education_hat mr-2"></i>{{ contry }}
+          </div>
+    </div>
+ 
+<p   class="text-white" > The above code will create 3 equal-width columns starting at small laptops and scaling to large desktops. On tablets and smaller devices, the columns will automatically stack.
+
+</p>
+<div  *ngIf="check()" >
+  <a [routerLink]="['/add', id]">Do you want to add or Update your Feedback</a>
+</div>
+</div>
+
+<div class="col-xl-12   ">
+ 
+   
+    <app-feed-back-content     *ngFor="let r of listFeedback " 
+          [text]="r.text"
+          [title]="r.title"
+          [date]="r.date"
+          [idUser]="r.idUser"
+          [rating]="r.rating" ></app-feed-back-content>
+</div>
+
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/user/auth.service';
+import { StorageService } from 'src/app/shared/services/user/storage.service';
 
 declare interface RouteInfo {
     path: string;
@@ -14,6 +16,12 @@ export const ROUTES: RouteInfo[] = [
     { path: '/travel/list', title: 'Liste des voyages',  icon: 'ni ni-planet text-blue', class: '' },
     { path: '/travel/add', title: 'Ajouter des voyages',  icon: 'ni ni-planet text-blue', class: '' },
     { path: '/travel/search', title: 'Chercher un voyage',  icon: 'ni ni-planet text-blue', class: '' },
+    { path: '/blog', title: 'Blog',  icon: 'ni-tv-2 text-primary', class: '' },
+    { path: '/feedback', title: 'FeedBack',  icon: 'ni-tv-2 text-primary', class: '' },
+    { path: '/statistique', title: 'Statistic',  icon: 'ni-tv-2 text-primary', class: '' },
+    { path: '/listeinvitation', title: 'Invitation',  icon: 'ni-tv-2 text-primary', class: '' }
+
+    
 
 ];
 
@@ -26,8 +34,8 @@ export class SidebarComponent implements OnInit {
 
   public menuItems: any[];
   public isCollapsed = true;
-
-  constructor(private router: Router) { }
+  constructor(private authService: AuthService, private storageService: StorageService,private router: Router) 
+  { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -35,4 +43,6 @@ export class SidebarComponent implements OnInit {
       this.isCollapsed = true;
    });
   }
+  
+  
 }

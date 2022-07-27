@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/user/auth.service';
+import { StorageService } from 'src/app/shared/services/user/storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,13 +13,23 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   public focus;
   public listTitles: any[];
+  public  currentUser:any;
   public location: Location;
-  constructor(location: Location,  private element: ElementRef, private router: Router) {
-    this.location = location;
+  constructor(location: Location,  private authService: AuthService, private storageService: StorageService,private router: Router) 
+  { this.location = location; }
+  
+  logout(): void {
+   
+        console.log("logout");
+        this.storageService.clean();
+      
+    this.router.navigate(['/login']);
+ //   window.location.reload();
   }
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
+    this.currentUser=this.storageService.getUser();
   }
   getTitle(){
     var titlee = this.location.prepareExternalUrl(this.location.path());
