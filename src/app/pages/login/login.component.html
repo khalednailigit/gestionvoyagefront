@@ -44,13 +44,14 @@
                   [(ngModel)]="form.username"
                   required
                   #username="ngModel"
-                  [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+                  [ngClass]="{ 'is-invalid': username.errors }"
                   placeholder="Username" 
                 />
-                <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
-                  Username is required!
-                </div>
                
+               
+                </div>
+                <div *ngIf="username.errors" class="alert alert-warning">
+                  Username is required!
                 </div>
               </div>
               <div class="form-group">
@@ -68,15 +69,16 @@
           required
           minlength="6"
           #password="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+          [ngClass]="{ 'is-invalid':password.errors }"
         />
-        <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
-          <div *ngIf="password.errors['required']">Password is required</div>
-          <div *ngIf="password.errors['minlength']">
-            Password must be at least 6 characters
-          </div>
-        </div>
+       
  
+                </div>
+                <div *ngIf="password.errors" class="alert alert-warning">
+                  <div *ngIf="password.errors['required']">Password is required</div>
+                  <div *ngIf="password.errors['minlength']">
+                    Password must be at least 6 characters
+                  </div>
                 </div>
               </div>
               <div class="custom-control custom-control-alternative custom-checkbox">
@@ -101,9 +103,9 @@
           </div>
         </div>
         <div class="row mt-3">
-          <div class="col-6">
+       <!--   <div class="col-6">
             <a href="javascript:void(0)" class="text-light"><small>Forgot password?</small></a>
-          </div>
+          </div>-->
           <div class="col-6 text-right">
             <a class=" text-light" routerLink="/register"><small>Create new account</small></a>
 

@@ -13,6 +13,7 @@ import { StorageService } from 'src/app/shared/services/user/storage.service';
 export class NavbarComponent implements OnInit {
   public focus;
   public listTitles: any[];
+  public  currentUser:any;
   public location: Location;
   constructor(location: Location,  private authService: AuthService, private storageService: StorageService,private router: Router) 
   { this.location = location; }
@@ -28,6 +29,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
+    this.currentUser=this.storageService.getUser();
   }
   getTitle(){
     var titlee = this.location.prepareExternalUrl(this.location.path());

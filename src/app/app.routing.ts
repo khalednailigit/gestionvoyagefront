@@ -9,6 +9,7 @@ import { AuthGuard } from './shared/services/guards/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
 import { AddFeedBackComponent } from './pages/feedbackandreclamation/add-feed-back/add-feed-back.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 const routes: Routes =[
   {
@@ -37,6 +38,9 @@ const routes: Routes =[
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'user-profile', component: UserProfileComponent,canActivate: [AuthGuard] },
+
+  
   {
     path: '**',
     redirectTo: 'dashboard',

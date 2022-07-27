@@ -23,6 +23,7 @@ import { AddFeedBackComponent } from './pages/feedbackandreclamation/add-feed-ba
 import { StatisticComponent } from './pages/feedbackandreclamation/statistic/statistic.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ListInvitationComponent } from './pages/invitation/list-invitation/list-invitation.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
  
 
 
@@ -50,7 +51,8 @@ import { ListInvitationComponent } from './pages/invitation/list-invitation/list
     AddFeedBackComponent,
     StatisticComponent,
     RegisterComponent,
-    ListInvitationComponent
+    ListInvitationComponent,
+    UserProfileComponent
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
