@@ -3,15 +3,12 @@
     <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
       <div class="container-fluid">
         <div class="header-body">
-          <!-- Card stats -->
-          <div class="row">
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-
+          <div class="container-fluid d-flex align-items-center">
+            <div class="row">
+              <div class="col-lg-7 col-md-10">
+                <button class="btn btn-info">Add Post</button>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
@@ -25,7 +22,7 @@
             <div class="card-header border-0">
               <h3 class="mb-0">Publication</h3>
             </div>
-            <div class="table-responsive" *ngFor="let publication of pubs">
+            <div class="table-responsive" *ngFor="let pub of pubs">
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                 <tr>
@@ -38,12 +35,13 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <th scope="row">
+                  <th scope="row">{{pub.title}}
                   </th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{pub.content}}</td>
+                  <td>{{pub.dateTimeOfPub}}</td>
+                  <td><button class="btn btn-danger" (click)="deletePub(pub)"> Delete</button>
+                    <button class="btn btn-success" > Edit </button>
+                  </td>
                   <td class="text-right">
                     <div ngbDropdown placement="bottom-right">
                       <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>

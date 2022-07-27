@@ -27,4 +27,10 @@ export class BlogComponent implements OnInit {
             console.log('error', error);
           });
         }
+  deletePub(pubs: Publication): void {
+    this.service.deletePub(pubs)
+      .subscribe( data => {
+        this.pubs = this.pubs.filter(p => p !== pubs);
+      });
+  }
 }

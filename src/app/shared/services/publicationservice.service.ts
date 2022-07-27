@@ -25,7 +25,8 @@ export class PublicationService {
         return res;
       }));
   }
-  deletePub(id: number): Observable<any> {
+
+  deletePub(id: Publication): Observable<any> {
     return this.http.delete<Publication>(environment.api_base_url + `/pub/supprimerPub/` + id)
       .pipe(map(res => {
         return res;
