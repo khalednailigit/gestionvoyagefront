@@ -12,8 +12,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
-import { TestComponent } from './pages/test/test.component';
+import { MessageComponent } from './pages/message/message.component';
 
+import { InjectableRxStompConfig, RxStompService, rxStompServiceFactory } from '@stomp/ng2-stompjs';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+
+import { UsersListComponent } from './pages/users-list/users-list.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   imports: [
@@ -23,13 +31,21 @@ import { TestComponent } from './pages/test/test.component';
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatGridListModule,
+    MatListModule,
+    //NgSelectModule,
+    MatSelectModule
+
+    
+
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    TestComponent
+    MessageComponent,
+    UsersListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,83 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+            <!-- Card stats -->
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--7">
+
+
+
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Les employées</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users">
+                                <td>
+                                    {{user.username}}
+                                </td>
+                                <td>
+                                    {{user.email}}
+                                </td>
+
+                                <td>
+                                    <button class="btn btn-primary" (click)="openModal(typeModal, user.id)">
+                                        Assigner
+                                    </button>
+                                </td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #typeModal let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="typeLabel">Assigner un employé à un voyage</h5>
+        <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="travelForm">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Les destination de voyage</label>
+                <div class="col-sm-8">
+                    <!-- <ng-select [items]="cars" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Séléctioner une destination" formControlName="selected">
+                    </ng-select>-->
+                    <mat-form-field>
+                        <mat-select placeholder="Les Destination" [formControl]="toppings" [(value)]="selectedToppings" multiple>
+                            <mat-option *ngFor="let travel of travels" [value]="travel.id">{{travel.address}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Annuler</button>
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Valider</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

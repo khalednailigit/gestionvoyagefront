@@ -1,0 +1,76 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+            <!-- Card stats -->
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--7">
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" [(ngModel)]="filters.keyword" name="keyword" (input)="getAllTravel()" class="form-control" placeholder="Filtre voyage par addresse" />
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-primary text-light" routerLink="/travel/add">Ajouter un voyage</a>
+        </div>
+    </div>
+    <br>
+
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Les employées</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Adresse</th>
+                                <th scope="col">Place</th>
+                                <th scope="col">Hotel</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let travel of travels">
+                                <td>
+                                    {{travel.address}}
+                                </td>
+                                <td>
+                                    {{travel.place}}
+                                </td>
+                                <td>
+                                    {{travel.hotel}}
+                                </td>
+                                <td>
+                                    {{travel.des}}
+                                </td>
+                                <td>
+                                    {{travel.dateTravel | date}}
+                                </td>
+
+                                <td>
+                                    <span>
+                                        <a (click)="deleteTravel(travel)" class="fa fa-trash mr-2" style="color:red"></a>
+                                        <a (click)="updateTravel(travel)" class="fa fa-edit" style="color:green"></a>
+                                    </span>
+
+                                </td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

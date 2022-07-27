@@ -1,0 +1,95 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+            <!-- Card stats -->
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--7">
+    <div class="row">
+
+        <div class="col-lg-6">
+            <label>Rechercher par adresse de voyage</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recherche par Adresse" [(ngModel)]="address" />
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" (click)="findByAddressContaining()">
+            Rechercher
+          </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <div class="form-group">
+                <label>Rechercher par adresse de voyage</label>
+
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                    </div>
+                    <input class="form-control datepicker" placeholder="Séléctionner date de voyage" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" type="text" (ngModelChange)="selectDateofTravel(model)" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-6">
+            <div class="form-group">
+
+                <label>Rechercher par date entre date de debut et fin</label>
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                    </div>
+                    <input class="form-control datepicker" placeholder="Séléctionner date de debut" name="start" [(ngModel)]="startDate" ngbDatepicker #s="ngbDatepicker" (click)="s.toggle()" type="text" />
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <label></label>
+            <br>
+
+            <div class="form-group">
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                    </div>
+                    <input class="form-control datepicker" placeholder="Séléctionner date de fin" name="end" [(ngModel)]="endDate" ngbDatepicker #e="ngbDatepicker" (click)="e.toggle()" type="text" (ngModelChange)="selectStartEndDateofTravel()" />
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="card-group">
+
+        <div *ngFor="let travel of travels">
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://prod.bravebooking.net/clients/SV76920/media/photos/sejour/445/Maldives_12.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{travel.address}}</h5>
+                    <p class="card-text">{{travel.des}}</p>
+
+                    <p class="card-text">{{travel.dateTravel | date}}</p>
+                    <a (click)="goToUser(travel.id)" class="btn btn-primary">Voir vos collègue</a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
