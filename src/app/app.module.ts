@@ -36,7 +36,6 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { UsersListComponent } from './pages/users-list/users-list.component';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { MapsViewComponent } from './pages/invitation/maps-view/maps-view.component';
 import { SendInvitationComponent } from './pages/invitation/send-invitation/send-invitation.component';
 
 
@@ -74,8 +73,8 @@ import { SendInvitationComponent } from './pages/invitation/send-invitation/send
     RegisterComponent,
     ListInvitationComponent,
     UserProfileComponent,
-    MapsViewComponent,
-    SendInvitationComponent
+    SendInvitationComponent,
+    UserProfileComponent
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@ export class ListInvitationComponent implements OnInit {
     this.service.getListInvitation().subscribe(res=>
       {console.log(res);
 
-     // this.listInvitation=res;
+      this.listInvitation=res;
     });
   }
    listInvitation2 = [
