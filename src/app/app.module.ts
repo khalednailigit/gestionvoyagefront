@@ -36,6 +36,8 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { UsersListComponent } from './pages/users-list/users-list.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { MapsViewComponent } from './pages/invitation/maps-view/maps-view.component';
+
 
 @NgModule({
   imports: [
@@ -70,7 +72,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     StatisticComponent,
     RegisterComponent,
     ListInvitationComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    MapsViewComponent
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
