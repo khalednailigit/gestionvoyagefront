@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PublicationService} from '../../shared/services/publicationservice.service';
 import {Publication} from '../../models/publication';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-blog',
@@ -10,7 +11,10 @@ import {Publication} from '../../models/publication';
 export class BlogComponent implements OnInit {
 
   pubs: Publication[];
-  constructor(private service: PublicationService) { }
+
+  constructor(private service: PublicationService, private matSnackBar: MatSnackBar) {
+  }
+
   ngOnInit(): void {
     this.getPubs();
   }
@@ -22,15 +26,24 @@ export class BlogComponent implements OnInit {
           console.log(data);
           if (data && data.length > 0) {
             this.pubs = data;
-          }},
-          error => {
-            console.log('error', error);
-          });
-        }
-  deletePub(pubs: Publication): void {
-    this.service.deletePub(pubs)
-      .subscribe( data => {
-        this.pubs = this.pubs.filter(p => p !== pubs);
-      });
+          }
+        },
+        error => {
+          console.log('error', error);
+        });
+  }
+
+
+
+  deletePub(pubId) {
+    this.service.deletePub(pubId).subscribe((message) => {
+      if (message.statusCode === 202) {
+        this.matSnackBar.open('Pub Deleted Successfully', 'OK', {
+          duration: 4000,
+        });
+      } else {
+        this.matSnackBar.open('Error in Pub Deletion', 'ok', {duration: 4000});
+      }
+    });
   }
 }
