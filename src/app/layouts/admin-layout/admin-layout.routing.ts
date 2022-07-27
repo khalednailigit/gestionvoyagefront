@@ -9,6 +9,7 @@ import { AuthGuard } from 'src/app/shared/services/guards/auth.guard';
 
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
 import { MapsViewComponent } from 'src/app/pages/invitation/maps-view/maps-view.component';
+import { SendInvitationComponent } from 'src/app/pages/invitation/send-invitation/send-invitation.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -20,6 +21,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'blog',      component: BlogComponent ,canActivate: [AuthGuard]  },
     { path: 'feedback',      component: FeedBackComponent ,canActivate: [AuthGuard] },
     { path: 'listeinvitation',      component: ListInvitationComponent ,canActivate: [AuthGuard] },
+    { path: 'send-invitation',component:SendInvitationComponent,canActivate: [AuthGuard]},
     {path : 'MapsView', component: MapsViewComponent ,canActivate: [AuthGuard]},
     { path: 'add/:id',      component: AddFeedBackComponent ,canActivate: [AuthGuard] },
     { path: 'statistique',      component: StatisticComponent ,canActivate: [AuthGuard] }

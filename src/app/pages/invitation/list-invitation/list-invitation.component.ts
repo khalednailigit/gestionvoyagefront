@@ -47,6 +47,8 @@ export class ListInvitationComponent implements OnInit {
     },
   ];
 
-        
+  sendInvitation(){
+    this.route.navigate(['/send-invitation']);
+  }
 
 }
