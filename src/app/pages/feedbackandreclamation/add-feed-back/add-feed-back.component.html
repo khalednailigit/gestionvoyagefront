@@ -28,16 +28,7 @@
 
           <div class="col-xl-8 order-xl-1">
             <div class="card bg-secondary shadow">
-              <div class="card-header bg-white border-0">
-                <div class="row align-items-center">
-                  <div class="col-8">
-                    <h3 class="mb-0">My account</h3>
-                  </div>
-                  <div class="col-4 text-right">
-                    <a href="#!" class="btn btn-sm btn-primary">Settings</a>
-                  </div>
-                </div>
-              </div>
+              
               <div class="card-body">
 
 
@@ -45,7 +36,44 @@
                 <form>
                   <div class="pl-lg-4">
                    
-                    
+
+                    <div class="rating"> 
+                        <input type="radio" id="t" [value]="val5"  name="place"  [(ngModel)]="rating.rating1"  ><label for="t">☆</label> 
+                        <input type="radio" id="h"  [value]="val4"  name="place" [(ngModel)]="rating.rating1"  ><label for="h">☆</label> 
+                        <input type="radio" id="j" [value]="val3"  name="place" [(ngModel)]="rating.rating1" ><label for="j">☆</label> 
+                        <input type="radio" id="i" [value]="val2" name="place"  [(ngModel)]="rating.rating1" ><label for="i">☆</label> 
+                        <input type="radio" id="l"  [value]="val1"  name="place"  [(ngModel)]="rating.rating1" ><label for="l">☆</label>
+                      </div>
+                      <div class="rating"> 
+                        <input type="radio" id="a" [value]="val5"  name="time"  [(ngModel)]="rating.rating2"  ><label for="a">☆</label> 
+                        <input type="radio" id="b"  [value]="val4"  name="time" [(ngModel)]="rating.rating2"  ><label for="b">☆</label> 
+                        <input type="radio" id="c" [value]="val3"  name="time" [(ngModel)]="rating.rating2" ><label for="c">☆</label> 
+                        <input type="radio" id="d" [value]="val2" name="time"  [(ngModel)]="rating.rating2" ><label for="d">☆</label> 
+                        <input type="radio" id="e"  [value]="val1"  name="time"  [(ngModel)]="rating.rating2" ><label for="e">☆</label>
+                      </div>
+                      <div class="rating"> 
+                        <input type="radio" id="r" [value]="val5"  name="subject"  [(ngModel)]="rating.rating3"  ><label for="r">☆</label> 
+                        <input type="radio" id="g"  [value]="val4"  name="subject" [(ngModel)]="rating.rating3"  ><label for="g">☆</label> 
+                        <input type="radio" id="z" [value]="val3"  name="subject" [(ngModel)]="rating.rating3" ><label for="z">☆</label> 
+                        <input type="radio" id="1" [value]="val2" name="subject"  [(ngModel)]="rating.rating3" ><label for="1">☆</label> 
+                        <input type="radio" id="2"  [value]="val1"  name="subject"  [(ngModel)]="rating.rating3" ><label for="2">☆</label>
+                      </div>
+                      <div class="rating"> 
+                        <input type="radio" id="3" [value]="val5"  name="communication"  [(ngModel)]="rating.rating4"  ><label for="3">☆</label> 
+                        <input type="radio" id="4"  [value]="val4"  name="communication" [(ngModel)]="rating.rating4"  ><label for="4">☆</label> 
+                        <input type="radio" id="5" [value]="val3"  name="communication" [(ngModel)]="rating.rating4" ><label for="5">☆</label> 
+                        <input type="radio" id="6" [value]="val2" name="communication"  [(ngModel)]="rating.rating4" ><label for="6">☆</label> 
+                        <input type="radio" id="7"  [value]="val1"  name="communication"  [(ngModel)]="rating.rating4" ><label for="7">☆</label>
+                      </div>
+              
+
+
+
+
+
+
+
+
                   <hr class="my-4" />
                   <!-- Address -->
                   <div class="pl-lg-4">

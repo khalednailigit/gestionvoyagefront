@@ -12,8 +12,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent,canActivate: [AuthGuard]  },
     { path: 'blog',      component: BlogComponent ,canActivate: [AuthGuard]  },
     { path: 'feedback',      component: FeedBackComponent ,canActivate: [AuthGuard] },
-    { path: 'add',      component: AddFeedBackComponent ,canActivate: [AuthGuard] },
-    { path: 'statistique',      component: StatisticComponent ,canActivate: [AuthGuard] },
     { path: 'listeinvitation',      component: ListInvitationComponent ,canActivate: [AuthGuard] }
+    { path: 'add/:id',      component: AddFeedBackComponent ,canActivate: [AuthGuard] },
+    { path: 'statistique',      component: StatisticComponent ,canActivate: [AuthGuard] }
 
 ];

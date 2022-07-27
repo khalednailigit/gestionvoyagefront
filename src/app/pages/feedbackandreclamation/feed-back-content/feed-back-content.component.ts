@@ -15,7 +15,11 @@ export class FeedBackContentComponent implements OnInit {
   @Input() idUser: number;
   @Input() rating: Rating;
  fullname : string;
-
+ val1 :number  =1 ;
+  val2 :number  =2 ;
+  val3 :number  =3 ;
+  val4 :number  =4 ;
+  val5 :number  =5 ;
 
   constructor(private  service : FeedbackService) { }
 
