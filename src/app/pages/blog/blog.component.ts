@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {PublicationService} from '../../shared/services/publicationservice.service';
 import {Publication} from '../../models/publication';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -10,9 +12,19 @@ import {Publication} from '../../models/publication';
 export class BlogComponent implements OnInit {
 
   pubs: Publication[];
-  constructor(private service: PublicationService) { }
+  addForm: FormGroup;
+  constructor(private formBuilder: FormBuilder, private router: Router,
+    private service: PublicationService, private matSnackBar: MatSnackBar) { }
+
   ngOnInit(): void {
     this.getPubs();
+    this.addForm = this.formBuilder.group({
+      id: [],
+      title: ['', Validators.required],
+      content: ['', Validators.required],
+      archive: ['', Validators.required],
+      dateTimeOfPub: ['', Validators.required]
+    });
   }
 
   getPubs() {
@@ -27,10 +39,23 @@ export class BlogComponent implements OnInit {
             console.log('error', error);
           });
         }
-  deletePub(pubs: Publication): void {
-    this.service.deletePub(pubs)
+
+  deletePub(pubId): void {
+    this.service.deletePub(pubId).subscribe((message) => {
+      if (message.statusCode === 202) {
+        this.matSnackBar.open('Pub Deleted Successfully', 'OK', {
+          duration: 4000,
+        });
+      } else {
+        this.matSnackBar.open('Error in Pub Deletion', 'ok', {duration: 4000});
+      }
+    });
+
+  }
+  onSubmit() {
+    this.service.addPub(this.addForm.value)
       .subscribe( data => {
-        this.pubs = this.pubs.filter(p => p !== pubs);
+        this.router.navigate(['list-Pub']);
       });
   }
 }
